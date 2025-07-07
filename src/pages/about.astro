@@ -1,6 +1,13 @@
 ---
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+// richiamo css
+import '../style/global.css';
+//
+
+
+// dichiarazioni costanti richiamo poi con {}
 const pageTitle = "About Me";
 const identity = {
   firstName: "Matteo",
@@ -14,6 +21,11 @@ const skills = ["C#", ".NET", "SQL", "React", "Astro"];
 const happy = true;
 const finished = false;
 const goal = 3;
+
+// css inpage
+const skillColor = "navy";
+const textcase = "uppercase" ;
+const fontweight = "bold";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -24,11 +36,18 @@ const goal = 3;
     <meta name="viewport" content="width=device-width" />
     <title>Astro</title>
     <title>{pageTitle}</title>
+        <style define:vars={{skillColor, fontweight, textcase}}>
+      h1 {
+        color: purple;
+        font-size: 4rem;} 
+       .skill {
+    color: var(--skillColor);
+    font-weight: var(--fontWeight);
+    text-transform: var(--textCase);}
+       </style>
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
+   <Navigation />
     <h1>About Me</h1>
    
     <h1>{pageTitle}</h1>
@@ -48,7 +67,7 @@ const goal = 3;
 </ul>
 <p>My skills are:</p>
 <ul>
-  {skills.map((skill) => <li>{skill}</li>)}
+  {skills.map((skill) => <li class = "skill"> {skill}</li>)}
 </ul>
 {happy && <p>I am happy to be learning Astro!</p>}
 
