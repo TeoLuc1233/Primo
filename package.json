@@ -10,12 +10,16 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.3.0",
+    "@react-three/fiber": "^9.2.0",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "astro": "^5.11.0",
     "framer-motion": "^12.23.0",
+    "gsap": "^3.13.0",
     "motion": "^12.23.0",
+    "prop-types": "^15.8.1",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "three": "^0.178.0"
   }
 }

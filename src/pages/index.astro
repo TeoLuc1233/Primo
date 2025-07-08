@@ -3,18 +3,26 @@ import Navigation from '../components/Navigation.astro';
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 import '../style/global.css';
-import BlurTitle from '../components/blurTitle.jsx'; // <-- questo importa il componente React
+import BlurTitle from '../components/blurTitle.jsx';
+import FlowingMenu from '../components/FlowingMenu.jsx';
+const demoItems = [
+  { link: '#', text: 'Mojave', image: 'https://picsum.photos/600/400?random=1' },
+  { link: '#', text: 'Sonoma', image: 'https://picsum.photos/600/400?random=2' },
+  { link: '#', text: 'Monterey', image: 'https://picsum.photos/600/400?random=3' },
+  { link: '#', text: 'Sequoia', image: 'https://picsum.photos/600/400?random=4' }
+];
 ---
 
 <Layout>
-  <Navigation />
+ 
+
+  <div style="height: 600px; position: relative;">
+    <FlowingMenu items={demoItems} client:visible />
+  </div>
 
   <h1>My Astro</h1>
 
-  <!-- Qui aggiungi l'H1 animato -->
-<BlurTitle title='Daje Roma' client:load />
-
-  <!-- puoi anche usare client:visible o client:idle -->
+  <BlurTitle title="Daje Roma" client:load />
 
   <Welcome />
 </Layout>
