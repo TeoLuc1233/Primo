@@ -4,25 +4,128 @@ import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 import '../style/global.css';
 import BlurTitle from '../components/blurTitle.jsx';
-import FlowingMenu from '../components/FlowingMenu.jsx';
-const demoItems = [
-  { link: '#', text: 'Mojave', image: 'https://picsum.photos/600/400?random=1' },
-  { link: '#', text: 'Sonoma', image: 'https://picsum.photos/600/400?random=2' },
-  { link: '#', text: 'Monterey', image: 'https://picsum.photos/600/400?random=3' },
-  { link: '#', text: 'Sequoia', image: 'https://picsum.photos/600/400?random=4' }
-];
+import TextPressure from '../components/TextPressure ';
+import DecryptedText from '../components/DecryptedText';
+
+
+
+
 ---
 
-<Layout>
-  <Navigation />
+<Layout
+  style={{
+    backgroundColor: '#2e2e2e',
+    minHeight: '100vh',
+    width: '100%',           // <-- larghezza piena
+    margin: 0,               // togli margini esterni
+    padding: 0,              // togli padding esterni
+    boxSizing: 'border-box', // evita problemi di dimensioni
+  }}
 
-  <div style="height: 600px; position: relative;">
-    <FlowingMenu items={demoItems} client:visible />
+  <div style={{position: 'relative', height: 'auto'}}>
+    <TextPressure
+      text="Benvenuto"
+      flex={true}
+      alpha={false}
+      stroke={false}
+      width={true}
+      weight={true}
+      italic={true}
+      textColor="#ffffff"
+      strokeColor="#ff0000"
+      minFontSize={36}
+	  client:visible
+    />
+<DecryptedText
+  text="Ciao Mondo!"
+  animateOn="view"
+  speed={50}
+  sequential
+  className="text-white"
+  encryptedClassName="text-red-500"
+  client:visible
+/>
+ 
+	  <!-- <BlurTitle title="Daje Roma" client:load /> -->
+    <!-- contenitore dx sx grigio e nero  -->
+  <div
+    style={{
+      display: 'flex',
+      flexWrap: 'wrap',  // permette di andare a capo su schermi stretti
+      marginTop: '20px',
+      width: '100%',
+      height: 'auto',
+    }}
+  >
+    <div
+    style={{
+    backgroundColor: 'black',
+    flex: '1 1 50%',
+    minHeight: '200px',
+
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: '1rem',
+    color: 'white',
+
+    borderRadius: '8px',
+
+    /* bordo sfumato effetto glow nero */
+    boxShadow: '0 0 10px 4px rgba(0, 0, 0, 0.7)',
+  }}
+    > <BlurTitle title="About Me" client:load />
+<DecryptedText
+  text="Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam. Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna"
+  animateOn="view"
+  speed={5}
+  sequential={true}
+  className="text-white"
+  encryptedClassName="text-red-500"
+  client:visible
+/>
+</div>
+
+    <div
+       style={{
+    backgroundColor: 'gray',
+    flex: '1 1 50%',
+    minHeight: '200px',
+
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: '1rem',
+    color: 'black',
+
+    borderRadius: '8px',
+
+    boxShadow: '0 0 10px 4px rgba(128, 128, 128, 0.7)',
+      }}
+    > <img
+    src="src/img/fototessera.jpg" 
+    alt="Foto profilo"
+    style={{
+      width: '300px',
+      height: '300px',
+      borderRadius: '70%', // cerchio
+      objectFit: 'cover',
+      marginBottom: '2rem',
+      boxShadow: '0 0 50px rgba(0,0,0,0.5)', // ombra alla foto
+    }}
+	</div>
   </div>
 
-  <h1>My Astro</h1>
 
-  <BlurTitle title="Daje Roma" client:load />
 
-  <Welcome />
+  <!-- secondo div -->
+
+
+
+
+  
+
+ 
 </Layout>
