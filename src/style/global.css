@@ -28,9 +28,20 @@ h1 {
   font-display: swap;
 }
 
-p{
-  font-size: 1.2rem;
+p {
+  font-size: 1rem;
   margin-left: 50px;
   margin-right: 50px;
-  margin-top: 0px;
+  margin-top: 0;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  color: white; /* per visibilità sul background scuro */
+  line-height: 1.6;
+}
+
+.lato-black-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: italic;
 }

@@ -6,7 +6,8 @@ import '../style/global.css';
 import BlurTitle from '../components/blurTitle.jsx';
 import TextPressure from '../components/TextPressure ';
 import DecryptedText from '../components/DecryptedText';
-import ScrollFloat from '../components/ScrollFloat.jsx';
+import Navbar from '../components/Navbar.jsx'
+
 
 ---
 
@@ -60,7 +61,7 @@ import ScrollFloat from '../components/ScrollFloat.jsx';
           }}
         >
           <BlurTitle title="Profile" client:load />
-		  
+		  <Navbar client:only="react" />
           <DecryptedText
             text="Name : Matteo"
             animateOn="view"
@@ -133,7 +134,7 @@ import ScrollFloat from '../components/ScrollFloat.jsx';
     gap: '1rem', // Spaziatura tra i componenti
         }}>
 		<BlurTitle title="My experience" client:load />
-		<p margin>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+		<p>Hello, my name is Matteo. From a very young age, I have been deeply curious about the world of technology and computing. This passion led me to attend a technical institute specializing in electronics and electrical engineering, where I built a solid foundation of technical and scientific knowledge. During my studies, I also gained valuable transversal skills working as a basketball referee. This role allowed me to travel extensively and taught me how to make quick, accurate decisions under pressure while managing high-stress situations calmly and professionally. After two challenging years marked by the pandemic, I worked as a warehouse associate at Amazon. This experience helped me understand the importance of logistics, efficient time management, and teamwork. Driven by my desire to pursue what I truly love, I enrolled in an intensive 6-month course focused primarily on web development using C#. At the end of the course, I completed a 3-month internship at Indra Minsait, where I had the opportunity to apply my skills in a real professional environment. Thanks to my dedication and growth, after a year of contract work, I was offered a permanent position at the company, marking the beginning of my career in the IT sector.</p>
 	</div>
 		
 
