@@ -8,12 +8,9 @@ import TextPressure from '../components/TextPressure ';
 import DecryptedText from '../components/DecryptedText';
 import Navbar from '../components/Navbar.jsx'
 import TextType from '../components/textType.jsx';
-
-
 ---
 
 <Layout
-
   style={{
     backgroundColor: '#2e2e2e',
     minHeight: '100vh',
@@ -23,157 +20,114 @@ import TextType from '../components/textType.jsx';
     boxSizing: 'border-box',
   }}
 >
-<Navbar client:only="react" />
-    <div style={{ position: 'relative', height: 'auto',paddingTop: '70px' }}>
-      <TextPressure
-        text="knowledge"
-        flex={true}
-        alpha={false}
-        stroke={false}
-        width={true}
-        weight={true}
-        italic={true}
-        textColor="#ffffff"
-        strokeColor="#ff0000"
-        minFontSize={36}
-        client:visible
-      />
+  <Navbar client:only="react" />
 
-      <!-- Contenuto principale -->
+  <div style={{ position: 'relative', height: 'auto', paddingTop: '70px' }}>
+    <TextPressure
+      text="knowledge"
+      flex={true}
+      alpha={false}
+      stroke={false}
+      width={true}
+      weight={true}
+      italic={true}
+      textColor="#ffffff"
+      strokeColor="#ff0000"
+      minFontSize={36}
+      client:visible
+    />
+
+    <!-- Contenuto principale -->
+    <div
+      style={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        marginTop: '20px',
+        width: '100%',
+        height: 'auto',
+      }}
+    >
       <div
         style={{
           display: 'flex',
-          flexWrap: 'wrap',
-          marginTop: '20px',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column',
           width: '100%',
-          height: 'auto',
+          minHeight: '300px',
+          textAlign: 'center',
         }}
-
-        
-
-
       >
-<div
-  style={{
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'column',
-    width: '100%',
-    minHeight: '300px', // o 100vh se vuoi centrare in verticale
-    textAlign: 'center',
-  }}
->
-<div
-  style={{
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
-    gap: '2rem',
-    width: '100%',
-    padding: '2rem',
-    boxSizing: 'border-box',
-  }}
->
-  <TextType 
-    text={[
-      "💻 Linguaggi e Tecnologie",
-      "C# – Linguaggio principale di sviluppo backend",
-      "SQL – Esperienza nella gestione e interrogazione di database relazionali",
-      ".NET Core / ASP.NET Core – Sviluppo di applicazioni web e API REST",
-      "Entity Framework Core – ORM utilizzato per l'accesso ai dati",
-      "AutoMapper – Mapping automatico tra DTO e modelli",
-      "MediatR – Implementazione del pattern CQRS",
-      "MassTransit – Messaggistica asincrona basata su RabbitMQ",
-      "Git – Versionamento del codice con Git e GitHub/GitLab"
-    ]}
-    typingSpeed={20}
-    pauseDuration={800}
-    showCursor={true}
-    cursorCharacter="|"
-    loop={false}
-    client:only="react"
-  />
-
-  <TextType
-    text={[
-      "🧰 Competenze Tecniche",
-      "Configurazione e manutenzione ambienti backend per progetti su larga scala",
-      "Conoscenza dei principi SOLID e best practices per il clean code",
-      "Debugging, logging, e gestione delle dipendenze in progetti enterprise",
-      "Esperienza con architetture a microservizi e codebase modulare"
-    ]}
-    typingSpeed={20}
-    pauseDuration={800}
-    showCursor={true}
-    client:only="react"
-  />
-
-  <TextType
-    text={[
-      "☁️ Cloud e Certificazioni",
-      "Microsoft Certified: Azure Fundamentals (AZ-900)",
-      "Conoscenza dei servizi cloud di Azure",
-      "Basi di networking, sicurezza e pricing"
-    ]}
-    typingSpeed={20}
-    pauseDuration={800}
-    showCursor={true}
-    client:only="react"
-  />
-
-  <TextType
-    text={[
-      "🏢 Esperienza Lavorativa",
-      "Indra Minsait (Junior Developer)",
-      "Progetto nella Pubblica Amministrazione",
-      "Focus sulla configurazione di ambienti applicativi",
-      "Supporto tecnico e manutenzione backend",
-      "Esperienza in team agili e gestione di ambienti complessi"
-    ]}
-    typingSpeed={20}
-    pauseDuration={800}
-    showCursor={true}
-    client:only="react"
-  />
-</div>
-
-
-      
-        <!-- Parte sinistra -->
         <div
           style={{
-            flex: '1 1 50%',
-            minHeight: '200px',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            padding: '1rem',
-            color: 'white',
+            display: 'grid',
+            gridTemplateColumns: '1fr',
+            gap: '2rem',
+            padding: '2rem',
+            width: '100%',
+            maxWidth: '1000px',
+            boxSizing: 'border-box',
           }}
+          class="responsive-grid"
         >
-         
-		 
-        </div>
-
-        <!-- Parte dx -->
-        <div
-          style={{
-            flex: '1 1 50%',
-            minHeight: '200px',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            padding: '1rem',
-            color: 'black',
-          }}      
-        >       
+          {[...Array(4)].map((_, index) => (
+            <div
+              key={index}
+              style={{
+                backgroundColor: '#1e1e1e',
+                borderRadius: '10px',
+                padding: '1.5rem',
+                boxShadow: '0 4px 10px rgba(0, 0, 0, 0.3)',
+                color: 'white',
+              }}
+            >
+              <TextType
+                text={
+                  index === 0
+                    ? [
+                        "💻 Linguaggi e Tecnologie",
+                        "C# – Linguaggio principale di sviluppo backend",
+                        "SQL – Esperienza nella gestione e interrogazione di database relazionali",
+                        ".NET Core / ASP.NET Core – Sviluppo di applicazioni web e API REST",
+                        "Entity Framework Core – ORM utilizzato per l'accesso ai dati",
+                        "AutoMapper – Mapping automatico tra DTO e modelli",
+                        "MediatR – Implementazione del pattern CQRS",
+                        "MassTransit – Messaggistica asincrona basata su RabbitMQ",
+                        "Git – Versionamento del codice con Git e GitHub/GitLab",
+                      ]
+                    : index === 1
+                    ? [
+                        "🧰 Competenze Tecniche",
+                        "Configurazione e manutenzione ambienti backend per progetti su larga scala",
+                        "Conoscenza dei principi SOLID e best practices per il clean code",
+                        "Debugging, logging, e gestione delle dipendenze in progetti enterprise",
+                        "Esperienza con architetture a microservizi e codebase modulare",
+                      ]
+                    : index === 2
+                    ? [
+                        "☁️ Cloud e Certificazioni",
+                        "Microsoft Certified: Azure Fundamentals (AZ-900)",
+                        "Conoscenza dei servizi cloud di Azure",
+                        "Basi di networking, sicurezza e pricing",
+                      ]
+                    : [
+                        "🏢 Esperienza Lavorativa",
+                        "Indra Minsait (Junior Developer)",
+                        "Progetto nella Pubblica Amministrazione",
+                        "Focus sulla configurazione di ambienti applicativi",
+                        "Supporto tecnico e manutenzione backend",
+                        "Esperienza in team agili e gestione di ambienti complessi",
+                      ]
+                }
+                typingSpeed={20}
+                pauseDuration={800}
+                showCursor={true}
+                client:only="react"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>
-	
-		
-
-
+  </div>
 </Layout>
