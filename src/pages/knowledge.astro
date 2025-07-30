@@ -7,6 +7,7 @@ import BlurTitle from '../components/blurTitle.jsx';
 import TextPressure from '../components/TextPressure ';
 import DecryptedText from '../components/DecryptedText';
 import Navbar from '../components/Navbar.jsx'
+import TextType from '../components/textType.jsx';
 
 
 ---
@@ -47,7 +48,97 @@ import Navbar from '../components/Navbar.jsx'
           width: '100%',
           height: 'auto',
         }}
+
+        
+
+
       >
+<div
+  style={{
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
+    width: '100%',
+    minHeight: '300px', // o 100vh se vuoi centrare in verticale
+    textAlign: 'center',
+  }}
+>
+<div
+  style={{
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    gap: '2rem',
+    width: '100%',
+    padding: '2rem',
+    boxSizing: 'border-box',
+  }}
+>
+  <TextType 
+    text={[
+      "💻 Linguaggi e Tecnologie",
+      "C# – Linguaggio principale di sviluppo backend",
+      "SQL – Esperienza nella gestione e interrogazione di database relazionali",
+      ".NET Core / ASP.NET Core – Sviluppo di applicazioni web e API REST",
+      "Entity Framework Core – ORM utilizzato per l'accesso ai dati",
+      "AutoMapper – Mapping automatico tra DTO e modelli",
+      "MediatR – Implementazione del pattern CQRS",
+      "MassTransit – Messaggistica asincrona basata su RabbitMQ",
+      "Git – Versionamento del codice con Git e GitHub/GitLab"
+    ]}
+    typingSpeed={20}
+    pauseDuration={800}
+    showCursor={true}
+    cursorCharacter="|"
+    loop={false}
+    client:only="react"
+  />
+
+  <TextType
+    text={[
+      "🧰 Competenze Tecniche",
+      "Configurazione e manutenzione ambienti backend per progetti su larga scala",
+      "Conoscenza dei principi SOLID e best practices per il clean code",
+      "Debugging, logging, e gestione delle dipendenze in progetti enterprise",
+      "Esperienza con architetture a microservizi e codebase modulare"
+    ]}
+    typingSpeed={20}
+    pauseDuration={800}
+    showCursor={true}
+    client:only="react"
+  />
+
+  <TextType
+    text={[
+      "☁️ Cloud e Certificazioni",
+      "Microsoft Certified: Azure Fundamentals (AZ-900)",
+      "Conoscenza dei servizi cloud di Azure",
+      "Basi di networking, sicurezza e pricing"
+    ]}
+    typingSpeed={20}
+    pauseDuration={800}
+    showCursor={true}
+    client:only="react"
+  />
+
+  <TextType
+    text={[
+      "🏢 Esperienza Lavorativa",
+      "Indra Minsait (Junior Developer)",
+      "Progetto nella Pubblica Amministrazione",
+      "Focus sulla configurazione di ambienti applicativi",
+      "Supporto tecnico e manutenzione backend",
+      "Esperienza in team agili e gestione di ambienti complessi"
+    ]}
+    typingSpeed={20}
+    pauseDuration={800}
+    showCursor={true}
+    client:only="react"
+  />
+</div>
+
+
+      
         <!-- Parte sinistra -->
         <div
           style={{
