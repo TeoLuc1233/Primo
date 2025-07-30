@@ -30,13 +30,10 @@ const Navbar = () => {
       <a href="/" className="button" title="Home">
         <FaHome className="icon" />
       </a>
-      <a href="/search" className="button" title="Search">
-        <FaSearch className="icon" />
-      </a>
-      <a href="/profile" className="button" title="Profile">
+      <a href="/knowledge" className="button" title="knowledge">
         <FaUser className="icon" />
       </a>
-      <a href="/cart" className="button" title="Cart">
+      <a href="/project" className="button" title="Project">
         <GrTest className="icon" />
       </a>
     </StyledNavbar>

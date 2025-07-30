@@ -1,0 +1,88 @@
+---
+import Navigation from '../components/Navigation.astro';
+import Welcome from '../components/Welcome.astro';
+import Layout from '../layouts/Layout.astro';
+import '../style/global.css';
+import BlurTitle from '../components/blurTitle.jsx';
+import TextPressure from '../components/TextPressure ';
+import DecryptedText from '../components/DecryptedText';
+import Navbar from '../components/Navbar.jsx'
+
+
+---
+
+<Layout
+
+  style={{
+    backgroundColor: '#2e2e2e',
+    minHeight: '100vh',
+    width: '100%',
+    margin: 0,
+    padding: 0,
+    boxSizing: 'border-box',
+  }}
+>
+<Navbar client:only="react" />
+    <div style={{ position: 'relative', height: 'auto',paddingTop: '70px' }}>
+      <TextPressure
+        text="Project"
+        flex={true}
+        alpha={false}
+        stroke={false}
+        width={true}
+        weight={true}
+        italic={true}
+        textColor="#ffffff"
+        strokeColor="#ff0000"
+        minFontSize={36}
+        client:visible
+      />
+
+      <!-- Contenuto principale -->
+      <div
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          marginTop: '20px',
+          width: '100%',
+          height: 'auto',
+        }}
+      >
+        <!-- Parte sinistra -->
+        <div
+          style={{
+            flex: '1 1 50%',
+            minHeight: '200px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: '1rem',
+            color: 'white',
+          }}
+        >
+         
+		 
+        </div>
+
+        <!-- Parte dx -->
+        <div
+          style={{
+            flex: '1 1 50%',
+            minHeight: '200px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: '1rem',
+            color: 'black',
+          }}      
+        >       
+        </div>
+      </div>
+    </div>
+	
+		
+
+
+</Layout>

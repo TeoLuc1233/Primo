@@ -15,3 +15,4 @@ export default function BlurTitle({ title }) {
     </motion.h1>
   );
 }
+
